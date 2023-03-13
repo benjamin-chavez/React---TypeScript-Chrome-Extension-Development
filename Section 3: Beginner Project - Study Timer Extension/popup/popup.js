@@ -71,6 +71,7 @@ function renderTask(taskNum) {
   text.type = 'text';
   text.placeholder = 'Enter a task...';
   text.value = tasks[taskNum];
+  text.className = 'task-input';
   text.addEventListener('change', () => {
     // console.log(tasks);
     tasks[taskNum] = text.value;
@@ -80,6 +81,7 @@ function renderTask(taskNum) {
   const deleteBtn = document.createElement('input');
   deleteBtn.type = 'button';
   deleteBtn.value = 'x';
+  deleteBtn.className = 'task-delete';
   deleteBtn.addEventListener('click', () => {
     // tasks.splice(taskNum, 1);
     deleteTask(taskNum);
