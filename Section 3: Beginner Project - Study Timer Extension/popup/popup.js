@@ -1,5 +1,36 @@
 let tasks = [];
 
+const startTimerBtn = document.getElementById('start-timer-btn');
+startTimerBtn.addEventListener('click', () => {
+  chrome.storage.local.get(['isRunning'], (res) => {
+    chrome.storage.local.set(
+      {
+        isRunning: !res.isRunning,
+      },
+      () => {
+        // TODO: This needs to run when popup is opened too. Otherwise it always resets to "Start Timer"
+        startTimerBtn.textContent = !res.isRunning
+          ? 'Pause Timer'
+          : 'Start Timer';
+      }
+    );
+    console.log('TEST!');
+  });
+});
+
+const resetTimerBtn = document.getElementById('reset-timer-btn');
+resetTimerBtn.addEventListener('click', () => {
+  chrome.storage.local.set(
+    {
+      timer: 0,
+      isRunning: false,
+    },
+    () => {
+      startTimerBtn.textContent = 'Start Timer';
+    }
+  );
+});
+
 const addTaskBtn = document.getElementById('add-task-btn');
 addTaskBtn.addEventListener('click', () => addTask());
 
