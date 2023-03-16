@@ -1,0 +1,13 @@
+Section Notes
+
+Content Notes:
+ - Minor bug: context menus should be created inside of the runtime onInstalled function and its onClicked listeners should be on the outside. (otherwise once the service worker goes to sleep the listeners won't get registered properly the next time it wakes up)
+
+Section Links:
+ - Chrome extension APIs reference: https://developer.chrome.com/docs/extensions/reference/
+
+ - Content scripts documentation: https://developer.chrome.com/docs/extensions/mv3/content_scripts/
+
+ - MDN fetch API reference: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+ - TV maze API: https://www.tvmaze.com/api#show-search
