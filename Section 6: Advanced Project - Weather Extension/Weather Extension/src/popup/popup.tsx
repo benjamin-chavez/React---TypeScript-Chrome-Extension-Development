@@ -20,14 +20,33 @@ const App: React.FC<{}> = () => {
     'Error',
   ]);
 
+  const [cityInput, setCityInput] = useState<string>('');
+
+  const handleCityButtonClick = () => {
+    if (cityInput === '') {
+      return;
+    }
+    setCities([...cities, cityInput]);
+    setCityInput('');
+  };
+
+  const handleCityDeleteButtonClick = (index: number) => {
+    cities.splice(index, 1);
+    setCities([...cities]);
+  };
+
   return (
     <Box mx="8px" my="16px">
       <Grid container>
         <Grid item>
           <Paper>
             <Box px="15px" py="5px">
-              <InputBase placeholder="Add a city name" />
-              <IconButton>
+              <InputBase
+                placeholder="Add a city name"
+                value={cityInput}
+                onChange={(e) => setCityInput(e.target.value)}
+              />
+              <IconButton onClick={handleCityButtonClick}>
                 <AddIcon />
               </IconButton>
             </Box>
@@ -35,8 +54,13 @@ const App: React.FC<{}> = () => {
         </Grid>
       </Grid>
       {cities.map((city, index) => (
-        <WeatherCard city={city} key={index} />
+        <WeatherCard
+          city={city}
+          key={index}
+          onDelete={() => handleCityDeleteButtonClick(index)}
+        />
       ))}
+      <Box height="16px" />
     </Box>
   );
 };
