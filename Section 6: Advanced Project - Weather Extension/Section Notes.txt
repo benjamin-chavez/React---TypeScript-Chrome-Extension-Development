@@ -1,0 +1,10 @@
+Section Notes
+
+Content Notes:
+ - If you have an adblocker installed, it could prevent the Weather Extension overlay feature from working, please disable it if you run into issues using the overlay toggle in the popup.
+
+Section Links:
+ - Open Weather API: https://openweathermap.org/api
+ - Material UI components: https://material-ui.com/getting-started/installation/
+ - Open Weather API weather conditions reference: https://openweathermap.org/weather-conditions
+ - Source for weather icon: https://www.flaticon.com/

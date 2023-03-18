@@ -16,5 +16,15 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["contextMenus"]
+  "permissions": ["contextMenus", "search", "tabs", "storage", "tts"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*"],
+      // "matches": ["https://*.google.com/*"],
+      // "matches": ["<all_urls>"],
+      // "exclude_matches": ["https://store.google.com/*"],
+      "css": ["contentScript.css"],
+      "js": ["contentScript.js"]
+    }
+  ]
 }

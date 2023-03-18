@@ -1,0 +1,1 @@
+console.log("Background Script Running..."),chrome.runtime.onMessage.addListener(((o,e,n)=>{console.log(o),console.log(e),n("Hello from the Background Script!")}));
