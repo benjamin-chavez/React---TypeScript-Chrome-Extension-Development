@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  Box,
-  Grid,
-  InputBase,
-  IconButton,
-  Paper,
-  Input,
-} from '@material-ui/core';
+import { Box, Grid, InputBase, IconButton, Paper } from '@material-ui/core';
 import {
   Add as AddIcon,
   PictureInPicture as PictureInPictureIcon,
@@ -86,8 +79,7 @@ const App: React.FC<{}> = () => {
 
   return (
     <Box mx="8px" my="16px">
-      {/* <Grid container justify="space-evenly"></Grid> */}
-      <Grid container justify="space-evenly">
+      <Grid container justifyContent="space-evenly">
         <Grid item>
           <Paper>
             <Box px="15px" py="5px">
