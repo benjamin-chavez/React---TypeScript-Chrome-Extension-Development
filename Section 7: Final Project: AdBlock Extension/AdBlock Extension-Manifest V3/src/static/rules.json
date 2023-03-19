@@ -5,7 +5,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "googlesyndication",
-      "resourceTypes": ["image", "other"]
+      "resourceTypes": ["image"]
     }
   },
   {
@@ -14,7 +14,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "googleadservices",
-      "resourceTypes": ["image", "xmlhttprequest", "other"]
+      "resourceTypes": ["image", "xmlhttprequest"]
     }
   },
   {
@@ -23,7 +23,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "doubleclick",
-      "resourceTypes": ["image", "xmlhttprequest", "other"]
+      "resourceTypes": ["image", "xmlhttprequest"]
     }
   }
 ]
