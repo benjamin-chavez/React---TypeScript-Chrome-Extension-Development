@@ -1,5 +1,5 @@
 // FIXME: YOU WOULD NOT EVER DEPLOY THIS SINCE THE API KEY IS ON THE FRONTEND
-const OPEN_WEATHER_API_KEY = 'a03b25fa03348b7e84b61ab2a0db4b1f';
+const OPEN_WEATHER_API_KEY = '284670339c8964b6ea4afbfc1653074b';
 
 // Define the type data returned by the API
 export interface OpenWeatherData {
@@ -42,4 +42,8 @@ export async function fetchOpenWeatherData(
   // const data = await res.json();
   const data: OpenWeatherData = await res.json();
   return data;
+}
+
+export function getWeatherIconSrc(iconCode: string) {
+  return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 }

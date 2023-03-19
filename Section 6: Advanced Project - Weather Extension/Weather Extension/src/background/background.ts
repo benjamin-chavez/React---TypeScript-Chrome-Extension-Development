@@ -35,6 +35,7 @@ chrome.contextMenus.onClicked.addListener((e) => {
 chrome.alarms.onAlarm.addListener(() => {
   getStoredOptions().then((options) => {
     const { homeCity, tempScale } = options;
+
     if (homeCity === '') {
       return;
     }
