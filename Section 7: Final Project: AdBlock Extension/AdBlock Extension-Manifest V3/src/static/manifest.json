@@ -9,15 +9,15 @@
     "128": "icon.png"
   },
   "permissions": ["declarativeNetRequest"],
-  "declarative_net_Request": {
-    "rule_resources": [
-      {
-        "id": "ruleset_1",
-        "enabled": true,
-        "path": "rules.json"
-      }
-    ]
-  },
+  // "declarative_net_Request": {
+  //   "rule_resources": [
+  //     {
+  //       "id": "ruleset_1",
+  //       "enabled": false,
+  //       "path": "rules.json"
+  //     }
+  //   ]
+  // },
   "background": {
     "service_worker": "background.js"
   },
