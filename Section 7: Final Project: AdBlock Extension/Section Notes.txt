@@ -1,0 +1,14 @@
+Section Notes
+
+Section Links:
+  - Chrome extension APIs reference: https://developer.chrome.com/docs/extensions/reference/
+
+  - Easy List: https://easylist.to/
+
+  - uBlock Origin source code: https://github.com/gorhill/uBlock
+
+  - Adblock Plus source code: https://gitlab.com/eyeo/adblockplus
+
+  - Chromium blog about new net request API: https://blog.chromium.org/2019/06/web-request-and-declarative-net-request.html
+
+  - XDA developers blog about new request API: https://www.xda-developers.com/google-chrome-manifest-v3-ad-blocker-extension-api/
