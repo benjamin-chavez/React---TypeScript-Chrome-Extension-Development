@@ -11,10 +11,10 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "<all_urls>",
-    "*://*.googleadservices.com/*",
-    "*://*.tpc.googlesyndication.com/*",
-    "*://*.g.doubleclick.net/*"
+    "<all_urls>"
+    // "*://*.googleadservices.com/*",
+    // "*://*.tpc.googlesyndication.com/*",
+    // "*://*.g.doubleclick.net/*"
   ],
   "background": {
     "service_worker": "background.js"
