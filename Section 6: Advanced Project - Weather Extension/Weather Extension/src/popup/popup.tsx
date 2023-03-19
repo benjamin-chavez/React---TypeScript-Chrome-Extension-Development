@@ -8,7 +8,10 @@ import {
   Paper,
   Input,
 } from '@material-ui/core';
-import { Add as AddIcon } from '@material-ui/icons';
+import {
+  Add as AddIcon,
+  PictureInPicture as PictureInPictureIcon,
+} from '@material-ui/icons';
 import '@fontsource/roboto';
 import './popup.css';
 import WeatherCard from '../components/WeatherCard';
@@ -19,6 +22,7 @@ import {
   getStoredOptions,
   LocalStorageOptions,
 } from '../utils/storage';
+import { Messages } from '../utils/messages';
 
 const App: React.FC<{}> = () => {
   const [cities, setCities] = useState<string[]>([]);
@@ -63,6 +67,19 @@ const App: React.FC<{}> = () => {
     });
   };
 
+  const handleOverlayButtonClick = () => {
+    chrome.tabs.query(
+      {
+        active: true,
+      },
+      (tabs) => {
+        if (tabs.length > 0) {
+          chrome.tabs.sendMessage(tabs[0].id, Messages.TOGGLE_OVERLAY);
+        }
+      }
+    );
+  };
+
   if (!options) {
     return null;
   }
@@ -70,7 +87,7 @@ const App: React.FC<{}> = () => {
   return (
     <Box mx="8px" my="16px">
       {/* <Grid container justify="space-evenly"></Grid> */}
-      <Grid container justify-content="space-evenly">
+      <Grid container justify="space-evenly">
         <Grid item>
           <Paper>
             <Box px="15px" py="5px">
@@ -94,7 +111,17 @@ const App: React.FC<{}> = () => {
             </Box>
           </Paper>
         </Grid>
+        <Grid item>
+          <Paper>
+            <Box py="4px">
+              <IconButton onClick={handleOverlayButtonClick}>
+                <PictureInPictureIcon />
+              </IconButton>
+            </Box>
+          </Paper>
+        </Grid>
       </Grid>
+
       {options.homeCity != '' && (
         <WeatherCard city={options.homeCity} tempScale={options.tempScale} />
       )}
